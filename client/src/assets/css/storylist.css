@@ -1,0 +1,42 @@
+.task-input{
+    display: block;
+    padding: 10px ;
+    margin: 20px;
+    width: 65%;
+    border-radius: 5px;
+    border: transparent;
+    margin-left: -10px;
+}
+.task{
+    margin-left: 500px;
+    margin-top: -550px;
+}
+.task-1{
+    color: white;
+    padding: 7px 15px ;
+    border: none;
+    border-radius: 5px;
+    background-color: tomato;
+}
+.task-label{
+    font-size: 20px;
+    color: tomato;
+}
+.task-btn{
+    color: white;
+    padding: 7px 15px ;
+    border: none;
+    border-radius: 5px;
+    background-color: tomato;
+margin-left: 5px;
+}
+.task-li{
+    list-style: none;
+    margin-left: -30px;
+}
+.task-p{
+    text-transform: capitalize;
+}
+.task-status{
+    color: green;
+}

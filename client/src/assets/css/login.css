@@ -1,0 +1,45 @@
+.login{
+    display: block;
+    padding: 10px ;
+    margin: 20px;
+    width: 65%;
+    border-radius: 5px;
+    border: transparent;
+    margin-left: 20px;
+}
+.input-button{
+    color: white;
+    padding: 7px 15px ;
+    border: none;
+    border-radius: 5px;
+    background-color: tomato;
+}
+form{
+    margin-top: 150px;
+    margin-left: 150px;
+}
+.body1 {
+    background-image: url('../images/reg-2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+ @media screen and (min-width:320px) and (max-width:500px) {
+    
+    .login{
+     
+        margin: 20px;
+        width: 200%;
+        border-radius: 5px;
+        border: transparent;
+        margin-left: -150px;
+    }
+ }
+.log-fp a{
+    color: blue;
+   padding-left: 230px;
+   text-decoration: none;
+}

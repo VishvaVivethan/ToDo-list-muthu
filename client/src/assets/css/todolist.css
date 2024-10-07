@@ -1,0 +1,86 @@
+.todo-li{
+    list-style: none;
+}
+.todo-head{
+    text-align: center;
+    font-size: 40px;
+    color: #000000;
+    text-transform: uppercase;
+margin-left: -600px;
+}
+.input2{
+    margin-left: 20px;
+}
+.todo-input{
+    display: block;
+    padding: 10px ;
+    margin: 20px;
+    width: 65%;
+    border-radius: 5px;
+    border: transparent;
+    margin-left: -1px;
+
+    
+}
+.todo-btn{
+    color: white;
+    padding: 7px 15px ;
+    border: none;
+    border-radius: 5px;
+    width: 65%;
+    background-color: tomato;
+}
+.todo-ul{
+    text-align: center;
+    margin-top: 100px;
+}
+.todo-table{
+    padding: 10px;
+    margin-left: 150px;
+}
+.todo-th{
+    padding: 10px;
+    text-transform: uppercase;
+}
+.todo-td{
+    padding: 10px;
+    text-transform: capitalize;
+    color: green;
+}
+.todo-td-btn{
+    color: white;
+    padding: 7px 15px ;
+    border: none;
+    border-radius: 5px;
+  margin-left: 10px;
+    background-color: tomato;   
+}
+.wp{
+    height: 40px;
+    width: 40px;
+    border: none;
+
+}
+.wpbtn{
+    border: none;
+    background-color: transparent;
+}
+.todo-one{
+    margin-left: 300px;
+    margin-top: -660px;
+}
+.todo-list1{
+    margin-top: -600px;
+}
+.user-1{
+    background-image: url('../images/reg-2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    position: relative;   
+}
+.todo-form{
+    margin-top: -10px;
+}

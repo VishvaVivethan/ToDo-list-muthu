@@ -1,20 +1,28 @@
-
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Login from '../Components/login';
+import { useState } from 'react';
+import Login from '../Components/Login';
 import Register from '../Components/Register';
 import StoryList from '../Components/StoryList';
 import TodoList from '../Components/TodoList';
+import Fp from '../Components/ForgotPassword';
+import Cp from '../Components/changePassword';
 
 function App() {
+    const [message, setMessage] = useState('');
 
     return (
         <Router>
-            <Routes>
-                <Route path="/" element={<Login />} />
-                <Route path="/TodoList" element={<TodoList />} />
-                <Route path="/storylist" element={ <StoryList  /> } />
-                <Route path="/register" element={<Register />} />
-            </Routes>
+            <div>
+                {message && <p>{message}</p>}
+                <Routes>
+                    <Route path="/login" element={<Login setMessage={setMessage} />} />
+                    <Route path="/fp" element={<Fp />} />
+                    <Route path="/todolist" element={<TodoList />} />
+                    <Route path="/storylist" element={<StoryList />} />
+                    <Route path="/" element={<Register setMessage={setMessage} />} />
+                    <Route path="/cp" element={<Cp setMessage={setMessage} />} />
+                </Routes>
+            </div>
         </Router>
     );
 }
@@ -22,16 +30,29 @@ function App() {
 export default App;
 
 
-// App.js
-// import React from 'react';
-// import TodoList from '../Components/StoryList';
+
+
+// import React, { useState } from 'react';
+// import Login from '../Components/Login';
+// import Register from '../Components/Register';
+// import Fp from '../Components/ForgotPassword';
+// import Cp from '../Components/changePassword';
+
 
 // function App() {
-//   return (
-//     <div className="App">
-//       <TodoList />
-//     </div>
-//   );
+//     const [message, setMessage] = useState('');
+
+//     return (
+//         <div>
+//             <h1>My App</h1>
+//             <Login setMessage={setMessage} />
+//             <Register  setMessage={setMessage} />
+//             <Fp setMessage={setMessage} />
+//             <Cp setMessage={setMessage} />
+
+//             {message && <p>{message}</p>}
+//         </div>
+//     );
 // }
 
 // export default App;

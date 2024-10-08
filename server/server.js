@@ -3,7 +3,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const storyRoutes = require('./routes/storyRoutes');
 const connectDB = require('./config/database'); 
-const authRoutes = require('./routes/authRoutes');
+const authRoutes = require('./routes/auth');
 const dataRoutes = require('./routes/dataRoutes');
 
 
@@ -33,3 +33,4 @@ const startServer = async () => {
 
 // Start the server
 startServer();
+

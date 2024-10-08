@@ -14,8 +14,9 @@
     border-radius: 5px;
     background-color: tomato;
 }
-form{
+.form{
     margin-top: 150px;
+    margin-left: 100px;
 }
 .body1{
     background-image: url('../images/reg-2.jpg');
@@ -34,7 +35,7 @@ form{
 }
 .reg-1{
 
-    padding-left: 170px;
+    padding-left: 190px;
 }
 .btn-1{
     text-decoration: none;

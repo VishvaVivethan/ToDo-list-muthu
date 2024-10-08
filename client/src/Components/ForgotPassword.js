@@ -1,32 +1,48 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
-const VerifyEmailButton = () => {
-    useEffect(() => {
-        // Load the external script for email verification
-        const script = document.createElement('script');
-        script.src = "https://www.phone.email/verify_email_v1.js";
-        script.async = true;
-        document.querySelector('.pe_verify_email').appendChild(script);
+function ForgotPassword() {
+    const [email, setEmail] = useState('');
+    const navigate = useNavigate();
 
-        // Define the receiver function
-        window.phoneEmailReceiver = function(userObj) {
-            const user_json_url = userObj.user_json_url;
-
-            // Alert with the JSON URL
-            alert(`Email Verification Successful !!\nPlease fetch authenticated email id from the following JSON file URL:\n ${user_json_url}`);
-        };
-
-        return () => {
-     
-            <div className='body'>
-
-            </div>
-        };
-    }, []);
+    const forgotPassword = async () => {
+        try {
+            await axios.post('http://localhost:5000/api/auth/forgot-password', { email });
+            alert('OTP sent to your email');
+            navigate('/cp');
+        } catch (error) {
+            console.error(error);
+            alert('Error sending OTP');
+        }
+    };
 
     return (
-        <div className="pe_verify_email" data-client-id="15104960567026272280"></div>
+      <Container fluid className='body1'>
+<Row>
+<Col lg={6} md={12} xs={12}>
+<div className='form'>
+    <h2  className='h2'>Forgot Password</h2>
+            <input
+            className='input-email login'
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+            />
+            <button onClick={forgotPassword} className='input-button login'>Send OTP</button>
+      
+    </div>
+    </Col>
+    <Col lg={6} md={12} xs={12}>
+    </Col>
+</Row>
+      </Container>
+          
     );
-};
+}
 
-export default VerifyEmailButton;
+export default ForgotPassword;

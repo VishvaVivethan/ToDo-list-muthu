@@ -1,0 +1,34 @@
+.todo-table1 {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
+}
+
+.todo-th1 {
+    background-color: #f48e7c;
+    color: white;
+    padding: 12px;
+    text-align: center;
+}
+
+.todo-td1 {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+.todo-th1, .todo-td1 {
+    transition: background-color 0.3s;
+}
+
+.todo-td1:hover {
+    background-color: #dbbbbb;
+}
+
+
+
+.todo-table1 tr:hover {
+    background-color: #f1f1f1;
+}

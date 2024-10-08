@@ -23,6 +23,9 @@ function Register() {
         }
     };
 
+
+    
+
     return (
       <Container fluid className="body1">
            <Row>

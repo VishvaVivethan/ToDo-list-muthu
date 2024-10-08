@@ -3,7 +3,6 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const nodemailer = require('nodemailer');
 const User = require('../models/user');
-
 const router = express.Router();
 
 // Register
@@ -25,6 +24,11 @@ router.post('/login', async (req, res) => {
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
     res.json({ token });
 });
+
+
+
+
+
 
 // Send OTP for forgot password
 router.post('/forgot-password', async (req, res) => {

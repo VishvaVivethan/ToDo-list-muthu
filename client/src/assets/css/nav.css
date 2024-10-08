@@ -1,41 +1,66 @@
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
+.offcanvas-navbar {
+    position: fixed;
+    top: 0;
+    left: -250px; 
+    width: 250px;
+    height: 100%;
     background-color: #f48e7c;
-    width: 22%;
-    height: 600px;
-    
-    z-index: 4;
-    
-}
-
- .logo {
     color: white;
-    font-size: 24px;
-    padding-left: 10px;
-  margin-top: -260px;
-}
+    transition: left 0.3s ease;
+    padding: 20px;
+    margin-top: 59px;
+   
+  }
+  
+  .offcanvas-navbar.open {
+    left: 0; 
+   
+  }
+ 
+  
+  .navbar-toggle {
+    background-color: white;
+    padding: 7px 15px ;
+    border: none;
+    border-radius: 5px;
+    color: tomato;
+    cursor: pointer;
+    z-index: 100 ;
+    margin-left: 45px;
+    margin-top: 5px;
+  }
 
-.nav-links {
+  .nav-a:hover {
+    background-color:transparent;
+    color: black;
+}
+  
+  .navbar-toggle:hover {
+    opacity: 0.8;
+  }
+
+  .nav-li {
     list-style: none;
-    display: flex;
-    gap: 20px;
-    padding-top: 10px;
-    padding-right: 20px;
-    display: block;
-}
+    padding: 5px;
 
-.nav-links a {
+  }
+  .nav-ul{
+    
+    margin-top: 50px;
+  }
+  .nav-a{
     color: white;
     text-decoration: none;
     padding: 8px 12px;
     display: block;
-}
-
-.nav-links a:hover {
-    background-color:transparent;
-    color: black;
-}
+  }
+  .nav-h2{
+    margin-left: 550px;
+    position: absolute;
+    color: white;
+    text-transform: uppercase;
+  }
+  .navbar{
+    background-color: #f48e7c;
+  
+  }

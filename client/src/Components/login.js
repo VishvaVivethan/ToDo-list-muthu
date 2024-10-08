@@ -14,8 +14,9 @@ function Login() {
     const login = async () => {
         try {
             await axios.post('http://localhost:5000/api/auth/login', { email, password });
+            
             alert('Login successful');
-            navigate('/todolist');
+            navigate('/home');
         } catch (error) {
             console.error(error);
             alert('Login failed');

@@ -69,7 +69,7 @@ const DataManager = () => {
         
       <>
        <Navbar/>
-        <Container fluid className='todo-list1 user-1'>
+        <Container fluid className=' user-1'>
               
             <Row>
             <Col lg={2} md={12} xs={12}></Col>
@@ -131,6 +131,5 @@ const DataManager = () => {
 };
 
 export default DataManager;
-
 
 

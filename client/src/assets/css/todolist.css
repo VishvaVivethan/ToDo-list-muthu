@@ -65,22 +65,11 @@ margin-left: -600px;
     border: none;
     background-color: transparent;
 }
-.todo-one{
-    margin-left: 300px;
-    margin-top: -660px;
-}
+
 .todo-list1{
-    margin-top: -600px;
+    z-index:-4;
 }
-.user-1{
-    background-image: url('../images/reg-2.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-    width: 100%;
-    position: relative;   
-}
+
 .todo-form{
     margin-top: -10px;
 }

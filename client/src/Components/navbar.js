@@ -1,24 +1,36 @@
 
-// Navbar.js
-import React from 'react';
-import { Link } from 'react-router-dom';
-import '../assets/css/nav.css'; 
+import React, { useState } from 'react';
+import '../assets/css/nav.css';
+
 
 const Navbar = () => {
+    const [isOpen, setIsOpen] = useState(false);
+  
+    const toggleNavbar = () => {
+      setIsOpen(!isOpen);
+    };
+  
     return (
-        <nav className="navbar">
-           
-            <ul className="nav-links">
-            <h1 className="logo display-5">Menu</h1>
-                <li>
-                    <Link to="/storylist">View Task</Link>
-                </li>
-                <li>
-                    <Link to="/TodoList">User List</Link>
-                </li>
-            </ul>
-        </nav>
+      <div className='navbar'>
+        <h2 className='nav-h2'>User DashBoard</h2>
+      <div >
+        
+        <button className="navbar-toggle " onClick={toggleNavbar}>
+          {isOpen ? 'Close' : 'Open'} Menu
+        </button>
+        
+        <div className={`offcanvas-navbar ${isOpen ? 'open' : ''}`}>
+          <ul  className='nav-ul'>
+            
+          <li className='nav-li'><a href="/home" className='nav-a'>Home</a></li>
+            <li className='nav-li'><a href="/storylist" className='nav-a'>View Task</a></li>
+            <li className='nav-li'><a href="/TodoList" className='nav-a'>User List</a></li>
+          
+          </ul>
+        </div>
+      </div>
+      </div>
     );
-};
-
-export default Navbar;
+  };
+  
+  export default Navbar;

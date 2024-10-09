@@ -17,7 +17,7 @@ margin-left: -600px;
     margin: 20px;
     width: 65%;
     border-radius: 5px;
-    border: transparent;
+    border:0.5px solid #ddd ;
     margin-left: -1px;
 
     
@@ -34,10 +34,7 @@ margin-left: -600px;
     text-align: center;
     margin-top: 100px;
 }
-.todo-table{
-    padding: 10px;
-    margin-left: 150px;
-}
+
 .todo-th{
     padding: 10px;
     text-transform: uppercase;
@@ -73,3 +70,6 @@ margin-left: -600px;
 .todo-form{
     margin-top: -10px;
 }
+/* body{
+    overflow-x: hidden;
+} */

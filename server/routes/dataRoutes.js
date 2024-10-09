@@ -1,26 +1,40 @@
-// server/routes/dataRoutes.js
+
 const express = require('express');
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 const Data = require('../models/dataModel');
 
 const router = express.Router();
 
-// Create
-router.post('/', async (req, res) => {
-    const newData = new Data(req.body);
+// Register
+router.post('/register', async (req, res) => {
+    const { name, email, password } = req.body; 
+    const newData = new Data({ name, email, password });
     await newData.save();
     res.status(201).send(newData);
 });
 
-// Read
-router.get('/', async (req, res) => {
-    const data = await Data.find();
-    res.send(data);
+// Login
+router.post('/login', async (req, res) => {
+    const { email, password } = req.body;
+    try {
+        const user = await Data.findOne({ email });
+        if (!user) return res.status(400).send('User not found');
+
+        const isMatch = await bcrypt.compare(password, user.password);
+        if (!isMatch) return res.status(400).send('Invalid credentials');
+
+        const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
+    res.json({ token });
+    } catch (error) {
+        res.status(500).send('Server error');
+    }
 });
 
-// Update
-router.put('/:id', async (req, res) => {
-    const updatedData = await Data.findByIdAndUpdate(req.params.id, req.body, { new: true });
-    res.send(updatedData);
+// Read
+router.get('/', async (req, res) => {
+    const data = await Data.find(); // Exclude password
+    res.send(data);
 });
 
 // Delete

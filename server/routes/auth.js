@@ -25,12 +25,50 @@ router.post('/login', async (req, res) => {
     res.json({ token });
 });
 
+// router.post('/login', async (req, res) => {
+//     const { email, password, name, value } = req.body;
+
+//     // Validate request body
+//     if (!email && !name) {
+//         return res.status(400).send('Email or name is required');
+//     }
+//     if (!password || !value) {
+//         return res.status(400).send('Password and value are required');
+//     }
+
+//     try {
+//         const user = await User.findOne({
+//             $or: [
+//                 { email },
+//                 { name }
+//             ]
+//         });
+
+//         if (!user || !(await bcrypt.compare(password, user.password))) {
+//             return res.status(400).send('Invalid credentials');
+//         }
+//         if (!data || !(await bcrypt.compare(value, data.value))) {
+//             return res.status(400).send('Invalid value');
+//         }
+
+//         // Generate JWT token
+//         const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
+//         res.json({ token });
+//     } catch (error) {
+//         console.error('Login error:', error);
+//         res.status(500).send('Internal server error');
+//     }
+// });
 
 
 
 
 
 // Send OTP for forgot password
+
+
+
+
 router.post('/forgot-password', async (req, res) => {
     const { email } = req.body;
     const user = await User.findOne({ email });

@@ -12,41 +12,58 @@ function Login() {
     const navigate = useNavigate();
 
     const login = async () => {
-        try {
-            await axios.post('http://localhost:5000/api/auth/login', { email, password });
-            
-            alert('Login successful');
-            navigate('/home');
-        } catch (error) {
-            console.error(error);
-            alert('Login failed');
+        const urls = [
+            'http://localhost:5000/api/auth/login',
+            'http://localhost:5000/api/data/login'
+        ];
+
+        for (const url of urls) {
+            try {
+                await axios.post(url, { email, password });
+                alert('Login successful');
+                navigate('/home');
+                return; 
+            } catch (error) {
+                console.error(`Login failed for ${url}:`, error);
+              
+            }
         }
+
+        alert('Login failed for both APIs');
     };
 
     return (
-       <Container  fluid className='body1'>
-        <Row>
-        <Col lg={6} md={12} xs={12}>
-        <div className='form'>
-        <h2  className='h2'>Login</h2>
-            <input placeholder="Email" onChange={(e) => setEmail(e.target.value)} className='input-email login'/>
-            <input type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)}  className='input-pwd login'/>
-            <p className='log-fp'><a href='/fp'>Forgot Password</a></p>
-            <button onClick={login} className='input-button login'>Login</button>
-            <p className='reg-1'>Or</p>
-          <button className='input-button login'><a href='/' className=' btn-1'>Register</a></button>
-                       
-        </div>
-        
-            </Col>
-            <Col lg={6} md={12} xs={12}>
+        <Container fluid className='body1'>
+            <Row>
+                <Col lg={6} md={12} xs={12}>
+                    <div className='form'>
+                        <h2 className='h2'>Login</h2>
+                        <input
+                            placeholder="Email"
+                            onChange={(e) => setEmail(e.target.value)}
+                            className='input-email login'
+                        />
+                        <input
+                            type="password"
+                            placeholder="Password"
+                            onChange={(e) => setPassword(e.target.value)}
+                            className='input-pwd login'
+                        />
+                        <p className='log-fp'>
+                            <a href='/fp'>Forgot Password</a>
+                        </p>
+                        <button onClick={login} className='input-button login'>Login</button>
+                        <p className='reg-1'>Or</p>
+                        <button className='input-button login'>
+                            <a href='/' className='btn-1'>Register</a>
+                        </button>
+                    </div>
+                </Col>
+                <Col lg={6} md={12} xs={12}>
                     {/* Optional image or other content */}
                 </Col>
-        </Row>
-
-       </Container>
-           
-     
+            </Row>
+        </Container>
     );
 }
 
